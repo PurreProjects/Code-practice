@@ -6,6 +6,12 @@ object {
 
 object.property = dot notation
 
+object['property'] = bracket notation
+Bracket notation is used when dot notation doesnt work, e.g.
+when the property is called delivery-time, the "-" is handled like a minus and it tried to do math.
+
+
+
 delete object.property = delete property
 
 Object is just a value. You can save objects into variables.
@@ -13,4 +19,23 @@ Object is just a value. You can save objects into variables.
 Objects are used to organize code.
 
 Instead of having alot of different variables for related data. 
-e.g. name, gender, age of a person, we can save that into an object and 
+e.g. name, gender, age of a person, we can save that into an object instead of several variables
+
+We can store any type of value in an object. e.g.
+
+object1 = {
+    name: 'Bosse',
+    object2: {
+        property2: name2:
+    }
+}
+
+This is called an nested object, its used for organizing values that refers to the same property
+we can access object2 by object1.object2.property2
+
+We can also create fucntions inside of objects since functions are also a type of value.
+
+Function inside of object is called a method.
+
+JSON = JavaScript Object notation
+Used to translate objects to JSON, since JSON is a universal language, it's used to communicate between computers that talk different languages
