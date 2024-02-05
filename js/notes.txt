@@ -1,0 +1,16 @@
+Create object = "x = {}"
+
+object {
+    property: value
+}
+
+object.property = dot notation
+
+delete object.property = delete property
+
+Object is just a value. You can save objects into variables.
+
+Objects are used to organize code.
+
+Instead of having alot of different variables for related data. 
+e.g. name, gender, age of a person, we can save that into an object and 
