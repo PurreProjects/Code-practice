@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom practice</title>
+</head>
+<body>
+    <button onclick="showResult('heads');">Heads</button>
+    <button onclick="showResult('tails');">Tails</button>
+    <p class="value"></p>
+
+    <input class="js-name-input" onkeydown="eventHandler(event.key);" placeholder="Enter your name">
+    <button onclick="showName(document.querySelector('.js-name-input').value);">Submit</button>
+
+    <p class="enterName"></p>
+
+    <script>
+        function showResult(value) {
+            document.querySelector('.value').innerHTML = 'You picked: ' + value;
+        };
+
+        function showName(name) {
+            document.querySelector('.enterName').innerHTML = `Your name is: ${name}`;
+        }
+
+        function eventHandler(event) {
+            if (event == 'Enter') {
+                showName(document.querySelector('.js-name-input').value);
+            }
+        }
+    </script>
+    
+</body>
+</html>

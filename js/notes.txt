@@ -39,3 +39,10 @@ Function inside of object is called a method.
 
 JSON = JavaScript Object notation
 Used to translate objects to JSON, since JSON is a universal language, it's used to communicate between computers that talk different languages
+
+
+
+DOM
+
+
+DOM = Document Object Model = e.g. document.body.innerHTML

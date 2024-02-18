@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom exercise
+    </title>
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button class="subscribe-button" onclick="
+    document.querySelector('.subscribe-button').innerHTML === 'Subscribe' ? document.querySelector('.subscribe-button').innerHTML = 'Subscribed' : document.querySelector('.subscribe-button').innerHTML = 'Subscribe'
+    ">Subscribe</button>
+    <p>Rock Paper Scissors</p>
+    <a href="/RockPaperScissors/rock-paper-scissors.html">Click Here</a>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="input amount" type="number" class="js-cost-input" onkeydown="handleCostKeydown(event.key);">
+    <button onclick="calculateShipping();">Calculate</button>
+    <p class="total"></p>
+
+    <input onkeyup="handleKeyup(event.key);">
+    <p class="inputKeyup"></p>
+
+    <script>
+        function handleCostKeydown (key) {
+            if (key == 'Enter') {
+            calculateShipping();
+            };
+        };
+        function calculateShipping(){
+            let price = Number(document.querySelector('.js-cost-input').value) * 100;
+
+            if (price < 4000 && price > 0) {
+               price = price + 1000;
+               document.querySelector('.total').innerHTML = `$${price / 100}`;
+            } else if (price <= 0) {
+                document.querySelector('.total').innerHTML = 'Summan kan inte vara 0 eller mindre';
+            } else {
+                document.querySelector('.total').innerHTML = `$${price / 100}`;
+            }
+        };
+
+         function handleKeyup(event) {
+
+            if (event == 'Backspace') {
+                document.querySelector('.inputKeyup').innerHTML = document.querySelector('.inputKeyup').innerHTML.slice(0, -1);
+            } else {
+            document.querySelector('.inputKeyup').innerHTML = document.querySelector('.inputKeyup').innerHTML + event;
+        }
+         };
+    </script>
+</body>
+</html>
