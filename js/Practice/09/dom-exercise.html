@@ -3,22 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/rpc.css">
         <title>dom exercise
         </title>
     </head>
     <body>
-        <p>Youtube Subscribe Button</p>
-        <button class="subscribe-button" onclick="
-        document.querySelector('.subscribe-button').innerHTML === 'Subscribe' ? document.querySelector('.subscribe-button').innerHTML = 'Subscribed' : document.querySelector('.subscribe-button').innerHTML = 'Subscribe'
-        ">Subscribe</button>
-        <p>Rock Paper Scissors</p>
-        <a href="/RockPaperScissors/rock-paper-scissors.html">Click Here</a>
-        <p>Amazon Shipping Calculator</p>
-        <p>Orders under $40 = +$10 shipping.</p>
-        <p>Orders over $40 = FREE shipping.</p>
-        <input placeholder="input amount" type="number" class="js-cost-input" onkeydown="handleCostKeydown(event.key);">
-        <button onclick="calculateShipping();">Calculate</button>
-        <p class="total"></p>
+        <div>
+            <p>Youtube Subscribe Button</p>
+            <button class="subscribe-button" onclick="Subscribe();">Prenumerera</button>
+        </div>
+        <div>
+            <p>Rock Paper Scissors</p>
+            <a href="/RockPaperScissors/rock-paper-scissors.html">Click Here</a>
+        </div>
+        <div>
+            <p>Amazon Shipping Calculator</p>
+            <p>Orders under $40 = +$10 shipping.</p>
+            <p>Orders over $40 = FREE shipping.</p>
+            <input placeholder="Cost of order" type="number" class="js-cost-input" onkeydown="handleCostKeydown(event.key);">
+            <button class="calcbutton" onclick="calculateShipping();">Calculate</button>
+            <p class="total"></p>
+        </div>
 
         <script>
             function handleCostKeydown (key) {
@@ -37,6 +42,17 @@
                     document.querySelector('.total').innerHTML = '$' + price;
                 }
             };
+
+            function Subscribe() {
+                const buttonElement = document.querySelector('.subscribe-button');
+                if (buttonElement.innerHTML === 'Prenumerera') {
+                    buttonElement.classList.add("clicked");
+                    buttonElement.innerHTML = 'Prenumererad';
+                } else {
+                    buttonElement.innerHTML = 'Prenumerera';
+                    buttonElement.classList.remove("clicked");
+                }
+        };
         </script>
     </body>
     </html>

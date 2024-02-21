@@ -1,0 +1,60 @@
+body {
+    font-family: Arial;
+}
+
+.body2 {
+    background-color: black;
+    color: white;
+    font-size: 40px;
+}
+
+div {
+    margin-bottom: 50px;
+}
+
+.subscribe-button {
+    height: 36px;
+    width: 113px;
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.subscribe-button:hover {
+    cursor: pointer;
+}
+
+
+input {
+    height: 20px;
+    padding: 7px
+}
+
+.calcbutton {
+    background-color: green;
+    color: white;
+    border: none;
+    height: 38px;
+    padding: 5px;
+    width: 80px;
+    }
+
+.clicked {
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+}
+
+.hideGame {
+    display: none;
+}
+
+.gameResult {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.result {
+    text-align: center;
+}

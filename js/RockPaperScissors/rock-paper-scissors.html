@@ -4,8 +4,11 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="../style/rpc.css">
   </head>
-  <body>
+  <body class="body2">
+    <div>
     <p>Rock Paper Scissors</p>
+  </div>
+  <div class="yourPick">
     <button onclick="
       playGame('rock');
     ">Rock</button>
@@ -17,17 +20,31 @@
     <button onclick="
       playGame('scissors');
     ">Scissors</button>
+  </div>
 
+  <div class="gameResult">
+    <p class="playerPick"></p>
+    <p>VS</p>
+    <p class="computerPick"></p>
+  </div>
+  <div>
+  <p class="result"></p>
+</div>
+
+
+
+  <div>
     <button onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
+      document.querySelector('.yourPick').classList.remove('hideGame');
       document.querySelector('.score').innerHTML  = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
     ">Reset Score</button>
-
-      <p class="result"></p>
       <p class="score"></p>
+
+    </div>
 
     <script>
       let score = JSON.parse(localStorage.getItem('score')) || {
@@ -38,7 +55,7 @@
 
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
-
+        document.querySelector('.yourPick').classList.add('hideGame');
         let result = '';
 
         if (playerMove === 'scissors') {
@@ -76,10 +93,11 @@
         } else if (result === 'Tie.') {
           score.ties += 1;
         }
-
         localStorage.setItem('score', JSON.stringify(score));
         document.querySelector('.result').innerHTML  = result;
         document.querySelector('.score').innerHTML  = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+        document.querySelector(".playerPick").innerHTML = playerMove;
+        document.querySelector(".computerPick").innerHTML = computerMove;
       }
 
       function pickComputerMove() {
